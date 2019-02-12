@@ -1,0 +1,147 @@
+%%% Example for master's thesis (in English)
+\documentclass[dvipdfmx, english]{ampmt}             % pdflatex
+%% \documentclass[dvipdfmx,english]{ampmt} % dvipdfmx
+
+%%% Class options:
+%%% chapter:   \chapter command is available (use report.cls).
+%%% duplexing: Generate PDF for duplex printing.
+%%% Options for article or report are also accepted.
+
+%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Outlier detection technique to extract candidates of fraud from medical insurance claims]
+      {Outlier detection technique to extract candidates of fraud from medical insurance claims}
+      % [title for spine (option)]{title}
+%%% Supervisors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\supervisors{Aki-Hiro Sato}{Associate Professor}             % First supervisor  {name}{title}
+            {}{} % Second supervisor {name}{title}
+            {}{}                               % Third supervisor  {name}{title}
+%%% Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Ryosuke Kawamori}
+%%% Submission date %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\submissiondate{2019}{February}   % {year}{month}
+%%% Number of output spines %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\numberofspines{1}
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstract{%
+This article proposes how to find fraudulent activities from data of healthcare claim in an unsupervised way. Firstly, we split data into homogenous groups by providers'{}
+department, number of speciality, and their geographical location, otherwise we may find providers doing rare operations or providers in rural areas because of its lower submitted money than in urban areas.
+Next, we apply outlier detection method, One-SVM and LOF to that groups. We find variation due to department and geographical location. Finally, we evaluate the effectiveness by labels of providers who are excluded
+because of their having committed fraud. Proposed method is above random and may be used as a first line of further investigation.
+
+}
+%%% Packages and definitions of your own macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amssymb}
+\usepackage{newtxtext,newtxmath} % Times font
+\newcommand{\rme}{\mathrm{e}}
+
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+%\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+
+%My definition and packages
+\usepackage{comment}
+\usepackage{tabularx}
+\usepackage{bm}
+\usepackage{here}
+%\usepackage[dvipdfmx]{graphicx}
+\usepackage{url}
+
+%\usepackage[hang,small,bf]{caption}
+
+\makeatletter
+\let\MYcaption\@makecaption
+\makeatother
+\usepackage[subrefformat=parens]{subcaption}
+%\captionsetup[sub]{parens}
+\makeatletter
+\let\@makecaption\MYcaption
+\makeatother
+
+\captionsetup{compatibility=false}
+\newcommand{\Tabref}[1]{Tab.~\ref{#1}}
+\newcommand{\Eqref}[1]{~(\ref{#1})}
+\newcommand{\Figref}[1]{Fig.~\ref{#1}}
+\newcommand{\SubFigref}[1]{FIg.~(\ref{#1})}
+
+
+
+
+
+%%% Control of output %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% If you don't want to output body text, activate the next line.
+%% \outputbodyfalse
+
+%%% If you don't want to output covers at the end of PDF, activate the next line.
+%% \outputcoverfalse
+
+%%% If you don't want to output abstract for submission at the end of PDF,
+%%% activate the next line.
+%% \outputabstractforsubmissionfalse
+
+%%% If you want to change the layout, use \geometry command provided by
+%%% the geometry package.
+%% \geometry{hmargin=3cm,vmargin=2cm}
+
+\begin{document}
+\ifoutputbody
+%%% Inside cover, abstract and table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeinsidecover                % Inside cover
+\makeabstract                   % Abstract
+\maketoc                        % Table of contents
+\setcounter{page}{1}
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{../paper/introduction-190119.tex}
+
+\input{../paper/health-care-fraud-and-existing-works-190119.tex}
+
+\input{../paper/data-190119.tex}
+
+\input{../paper/method-190119.tex}
+
+\input{../paper/result-190119.tex}
+
+\input{../paper/conclusion-190119.tex}
+
+%\bibliography{conference} %bibファイルの.bibの前の部分
+%\bibliographystyle{unsrt} %引用された順番に出力
+
+
+
+%%% Acknowledgments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgment
+The author would like to express his sincere gratitude to Associate Professor
+Aki-Hiro Sato for his helpful advices.
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% If you want to use BibTeX, delete the above and insert code here.
+%% \bibliographystyle{...}
+%% \bibliography{...}
+\bibliographystyle{unsrt} %引用された順番に出力
+\bibliography{conference} %bibファイルの.bibの前の部分
+
+%%% Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% If you don't need appendices, delete the below.
+\appendix
+
+\section{Appendix}
+
+
+%%% End of body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fi
+\ifoutputcover
+\evenclearpage
+%%% Covers and abstract for submission %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makecover                      % Cover
+\makespine[\numberofspines]     % Spine
+\fi
+\ifoutputabstractforsubmission
+\makeabstractforsubmission      % Abstract for submission
+\fi
+\end{document}

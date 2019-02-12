@@ -1,0 +1,183 @@
+\begin{thebibliography}{10}
+
+\bibitem{Survey}
+Jing Li, Kuei-Ying Huang, Jionghua Jin, and Jianjun Shi.
+\newblock A survey on statistical methods for health care fraud detection.
+\newblock {\em Health care management science}, 11(3):275--287, 2008.
+
+\bibitem{Dean}
+Passard~C. Dean, Josseibel Josseibel Vazquez-Gonzalez, and Lucy Fricker.
+\newblock Causes and challenges of healthcare fraud in the us.
+\newblock {\em International Journal of Business and Social Science}, 4(14),
+  2013.
+
+\bibitem{Van}
+Guido van Capelleveen, Mannes Poel, Roland~M. Mueller, Dallas Thornton, and Jos
+  van Hillegersberg.
+\newblock Outlier detection in healthcare fraud: A case study in the medicaid
+  dental domain.
+\newblock {\em International journal of accounting information systems},
+  21:18--31, 2016.
+
+\bibitem{Shin}
+Hyunjung Shin, Hayoung Park, Junwoo Lee, and Won~Chul Jhee.
+\newblock A scoring model to detect abusive billing patterns in health
+  insurance claims.
+\newblock {\em Expert Systems with Applications}, 39(8):7441--7450, 2012.
+
+\bibitem{OneSVM}
+Bernhard Sch{\"o}lkopf, John~C. Platt, John Shawe-Taylor, Alex~J. Smola, and
+  Robert~C Williamson.
+\newblock Estimating the support of a high-dimensional distribution.
+\newblock {\em Neural computation}, 13(7):1443--1471, 2001.
+
+\bibitem{Breunig}
+Markus~M. Breunig, Hans-Peter Kriegel, Raymond~T. Ng, and J\"{o}rg Sander.
+\newblock Lof: Identifying density-based local outliers.
+\newblock {\em SIGMOD Rec.}, 29(2):93--104, May 2000.
+
+\bibitem{Leie}
+\url{https://www.nhpco.org/sites/default/files/public/regulatory/LEIE_Exsclusion_List.pdf}
+  Accessed on 2018 Nov 25.
+
+\bibitem{Nhcaa}
+\url{https://www.nhcaa.org/resources/health-care-anti-fraud-resources/consumer-info-action.aspx}
+  Accessed on 2018 Dec 19.
+
+\bibitem{Multidim}
+Dallas Thornton, Roland~M. Mueller, Paulus Schoutsen, and Jos van
+  Hillegersberg.
+\newblock Predicting healthcare fraud in medicaid: a multidimensional data
+  model and analysis techniques for fraud detection.
+\newblock {\em Procedia technology}, 9:1252--1264, 2013.
+
+\bibitem{Prevention}
+KPMG Fraud risk management. Available :
+  \url{https://assets.kpmg.com/content/dam/kpmg/pdf/2014/05/fraud-risk-management-strategy-prevention-detection-response-O-201405.pdf}
+  Accessed 2018 Nov 25.
+
+\bibitem{NoEvidence}
+Arash Rashidian, Hossein Joudaki, and Taryn Vian.
+\newblock No evidence of the effect of the interventions to combat health care
+  fraud and abuse: a systematic review of literature.
+\newblock {\em PLoS ONE}, 7(8):41988, 2012.
+
+\bibitem{Ortega}
+Pedro~A Ortega, Cristi{\'a}n~J. Figueroa, and Gonzalo~A. Ruz.
+\newblock A medical claim fraud/abuse detection system based on data mining: A
+  case study in chile.
+\newblock {\em DMIN}, 6:26--29, 2006.
+
+\bibitem{Neuralnet}
+Hongxing He, Jincheng Wang, Warwick Graco, and Simon Hawkins.
+\newblock Application of neural networks to detection of medical fraud.
+\newblock {\em Expert Systems with Applications}, 13(4):329--336, 1997.
+
+\bibitem{Bonchi}
+Francesco Bonchi, Fosca Giannotti, Gianni Mainetto, and Dino Pedreschi.
+\newblock A classification-based methodology for planning audit strategies in
+  fraud detection.
+\newblock In {\em Proceedings of the fifth ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 175--184. ACM, 1999.
+
+\bibitem{RichardRF}
+Richard Bauder and Taghi Khoshgoftaar.
+\newblock Medicare fraud detection using random forest with class imbalanced
+  big data.
+\newblock In {\em 2018 IEEE International Conference on Information Reuse and
+  Integration (IRI)}, pages 80--87, July 2018.
+
+\bibitem{RichardMultiple}
+Matthew Herland, Taghi Khoshgoftaar, and Richard~A. Bauder.
+\newblock Big data fraud detection using multiple medicare data sources.
+\newblock {\em Journal of Big Data}, 5(1):29, Sep 2018.
+
+\bibitem{TwoModels}
+Rasim~M. Musal.
+\newblock Two models to investigate medicare fraud within unsupervised
+  databases.
+\newblock {\em Expert Systems with Applications}, 37(12):8628 -- 8633, 2010.
+
+\bibitem{RichardUnsupervised}
+Richard Bauder, Raquel da~Rosa, and Taghi Khoshgoftaar.
+\newblock Identifying medicare provider fraud with unsupervised machine
+  learning.
+\newblock In {\em 2018 IEEE International Conference on Information Reuse and
+  Integration (IRI)}, pages 285--292. IEEE, 2018.
+
+\bibitem{Seo2017Identifying}
+Jiwon Seo and Ofer Mendelevitch.
+\newblock Identifying frauds and anomalies in medicare-b dataset.
+\newblock In {\em 2017 39th Annual International Conference of the IEEE
+  Engineering in Medicine and Biology Society (EMBC)}, pages 3664--3667, July
+  2017.
+
+\bibitem{ekina2013application}
+Tahir Ekina, Francesca Leva, Fabrizio Ruggeri, and Refik Soyer.
+\newblock Application of bayesian methods in detection of healthcare fraud.
+\newblock {\em chemical engineering Transaction}, 33, 2013.
+
+\bibitem{Pande}
+Vivek Pande and Will Maas.
+\newblock Physician medicare fraud: characteristics and consequences.
+\newblock {\em International Journal of Pharmaceutical and Healthcare
+  Marketing}, 7(1):8--33, 2013.
+
+\bibitem{PhysiAndOther}
+\url{https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Physician-and-Other-Supplier.html}.
+
+\bibitem{NpiFile}
+\url{http://download.cms.gov/nppes/NPI_Files.html}.
+
+\bibitem{GeoCor}
+\url{http://mcdc.missouri.edu/applications/geocorr2000.html}.
+
+\bibitem{Puf}
+\url{http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/Medicare-Physician-and-Other-Supplier-PUF-Methodology.pdf}.
+
+\bibitem{ASato}
+Aki-Hiro Sato, Shoki Nishimura, and Hiroe Tsubaki.
+\newblock World grid square codes: Definition and an example of world grid
+  square data.
+\newblock In {\em Big Data (Big Data), 2017 IEEE International Conference on},
+  pages 4238--4247. IEEE, 2017.
+
+\bibitem{GeoHealth}
+\url{http://www.cbo.gov/sites/default/files/cbofiles/ftpdocs/89xx/doc8972/02-15-geoghealth.pdf}.
+
+\bibitem{Taxonomy}
+\url{https://data.cms.gov/Medicare-Enrollment/CROSSWALK-MEDICARE-PROVIDER-SUPPLIER-to-HEALTHCARE/j75i-rw8y}.
+
+\bibitem{hcpcs}
+\url{https://www.cms.gov/medicare/coding/hcpcsreleasecodesets/alpha-numeric-hcpcs-items/2018-alpha-numeric-hcpcs-file-.html}.
+
+\bibitem{e}
+Evgenia Dimitriadou, Kurt Hornik, Friedrich Leisch, David Meyer, and Andreas
+  Weingessel.
+\newblock Misc functions of the department of statistics (e1071), tu wien.
+\newblock {\em R package}, 1:5--24, 2008.
+
+\bibitem{dbscan}
+\url{https://CRAN.R-project.org/package=dbscan}.
+
+\bibitem{Diagnostic}
+\url{https://www.bizjournals.com/buffalo/news/2017/02/02/cowie-physician-and-opioid-addict-sentenced-to-24.html}.
+
+\bibitem{ASatoMesh}
+Aki-Hiro Sato, Shoki Nishimura, and Hiroe Tsubaki.
+\newblock World grid square codes: Definition and an example of world grid
+  square data.
+\newblock In {\em 2017 IEEE International Conference on Big Data (Big Data)},
+  pages 4238--4247, Dec 2017.
+
+\bibitem{MeshJIS}
+\url{https://www.stat.go.jp/english/data/mesh/index.html}.
+
+\bibitem{CreditCard}
+Andrea~D. Pozzolo, Olivier Caelen, Reid~A. Johnson, and Gianluca Bontempi.
+\newblock Calibrating probability with undersampling for unbalanced
+  classification.
+\newblock In {\em 2015 IEEE Symposium Series on Computational Intelligence},
+  pages 159--166, Dec 2015.
+
+\end{thebibliography}

@@ -1,0 +1,25 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Health care fraud and Existing works}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Health care fraud}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Existing Works}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Data}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Description of datasets}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Data Combination}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Data understanding}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Method}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Subset of all data for evaluation}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Feature engineering}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Data-split method}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.4}{One Support Vector Machine}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.5}{Local Outlier Factor}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.6}{Evaluation Metric}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Results}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{One-SVM}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Local Outlier Factor}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{AUC Score}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Ratio of the outliers in One-SVM}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 21
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 22
+\BOOKMARK [2][-]{subsection.A.1}{World Grid Square Code}{appendix.A}% 23
+\BOOKMARK [2][-]{subsection.A.2}{Outlier detection to extract credit card fraud}{appendix.A}% 24
+\BOOKMARK [2][-]{subsection.A.3}{List of exclusions}{appendix.A}% 25

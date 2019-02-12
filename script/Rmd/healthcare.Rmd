@@ -1,0 +1,336 @@
+---
+title: "Healthcare"
+author: "Ryosuke Kawamori"
+date: "2017/12/1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(ggplot2)
+library(stringr)
+library(knitr)
+library(kableExtra)
+library(GGally)
+library(zipcode)
+library(ggmap)
+library(maps)
+library(mapdata)
+source("http://www.fttsus.jp/worldmesh/R/worldmesh.R")
+```
+
+```{r, include = FALSE}
+healthcare <- read_csv("../../data/Medicare_Provider_Utilization_and_Payment_Data__Physician_and_Other_Supplier_PUF_CY2014.csv",
+                       n_max=100000)
+full_statename <- data.frame(state = state.abb, region=state.name)
+data(zipcode)
+
+cal_meshcode1_vec <- function(lat,lon){mapply(cal_meshcode1,lat,lon)}
+meshcode_to_latlong_NE_vec <- function(x){sapply(x, meshcode_to_latlong_NE)}
+meshcode_to_latlong_NW_vec <- function(x){sapply(x, meshcode_to_latlong_NW)}
+meshcode_to_latlong_SE_vec <- function(x){sapply(x, meshcode_to_latlong_SE)}
+meshcode_to_latlong_SW_vec <- function(x){sapply(x, meshcode_to_latlong_SW)}
+
+
+cCyan <- "#00a0e9"
+cMagenta <- "#e4007f"
+cGreen <- "#009944"
+cOrange <- "#f39800"
+cLightBlue <- "#0068b7"
+
+states <- map_data("state")
+county <- map_data("county")
+
+gg_base <- ggplot()+
+  geom_polygon(data=states, aes(x=long, y=lat, group=group), color="black", fill=NA)+
+  geom_polygon(data=county, aes(x=long, y=lat, group=group), fill="gray", color="white", size=0.1)
+```
+
+```{r}
+colnames(healthcare) <- str_replace_all(colnames(healthcare), " ", "")
+healthcare %<>% 
+  group_by(HCPCSCode) %>% 
+  mutate(n=n()) %>% 
+  ungroup() %>% 
+  mutate(rank=dense_rank(desc(n)))
+
+healthcare <- healthcare %>% 
+  mutate(zip = str_sub(ZipCodeoftheProvider, 1, 5)) %>% 
+  left_join(., zipcode, by="zip") 
+  
+healthcare <- healthcare %>% 
+  mutate(city = str_to_lower(city))
+
+healthcare <- healthcare %>% 
+  left_join(., full_statename, by="state") %>% 
+  mutate(region=str_to_lower(region))
+```
+
+
+## Healthcare Fraud Detection
+
+### アイデア
+* 医者と患者を世界メッシュに基づいてクラスタリングし、各メッシュごとの傾向をみる.  
+$\rightarrow$今回のデータには患者の位置情報が含まれない  
+* 各Provider(医者)に関して特徴量を作成、$k$-近傍法や外れ値検出
+
+### データについて
+データの各列の内容は, [こちら](https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/Medicare-Physician-and-Other-Supplier-PUF-Methodology.pdf).
+
+#### データの大まかな特徴
+Providerの種類.
+```{r}
+healthcare %>% 
+  group_by(EntityTypeoftheProvider) %>% 
+  summarise(n=n()) %>% 
+  kable(., caption="Entity Type of the Providerの頻度") 
+```
+
+上表より,個人として登録されているService Providerが多い.
+Entitye Type IndivisualのHealthcare Service 頻度について
+
+```{r}
+healthcare %>% 
+  filter(EntityTypeoftheProvider == "I") %>% 
+  group_by(HCPCSCode, HCPCSDescription) %>% 
+  summarise(n=n()) %>% 
+  arrange(desc(n)) %>% 
+  head(15) %>% 
+  kable(., caption="Indivisual ProviderのHealthacare Serviceの頻度")
+```
+
+上表より, 15・25分定期的外来患者の診察が多いことがわかる.
+
+Entitye Type IndivisualのHealthcare Service 頻度について
+```{r}
+healthcare %>% 
+  filter(EntityTypeoftheProvider == "O")  %>% 
+  group_by(HCPCSCode, HCPCSDescription) %>% 
+  summarise(n=n()) %>%
+  arrange(desc(n)) %>% 
+  head(15) %>% 
+  kable(., caption="Organization の Healrthcare Service頻度")
+```
+
+上表より,インフルエンザワクチンの管理・摂取が多いことがわかる.
+データ数の多いIndividualを対象に、特徴量を作ることを考える.各Service(HCPCS)について申請された・支払われた額を特徴量とすることを考える.まず,件数の多いServiceについて申請・支払われた金額を特徴量にしてみる.
+
+
+```{r}
+healthcare %>% filter(rank <= 2, EntityTypeoftheProvider=="I") %>% 
+  select(NationalProviderIdentifier, HCPCSCode, AverageMedicareAllowedAmount, AverageSubmittedChargeAmount) %>% 
+  group_by(NationalProviderIdentifier, HCPCSCode) %>% 
+  summarise(AverageMedicareAllowedAmount = sum(AverageMedicareAllowedAmount), AverageSubmittedChargeAmount = sum(AverageSubmittedChargeAmount)) %>% 
+  gather(key="key", value="value", -NationalProviderIdentifier,-HCPCSCode) %>% 
+  unite(tmp, HCPCSCode, key) %>% 
+  spread(tmp, value) %>% 
+  na.omit() %>% 
+  kable(., caption="特徴量")
+```
+
+欠損値を取り除く処理を行うと, 行数がかなり少なくなってしまった.これは,ほとんどのProviderが15・25分どちらか片方の申請を
+行なっていることを意味する.今回この欠損値は金額がないことを示すので０で埋めて良いと考えられる.0で埋めて特徴量ベクトルとする.
+散布図にして図示してみる.
+
+```{r}
+healthcare %>% filter(rank <= 2, EntityTypeoftheProvider=="I") %>% 
+  select(NationalProviderIdentifier, HCPCSCode, AverageMedicareAllowedAmount, AverageSubmittedChargeAmount) %>% 
+  group_by(NationalProviderIdentifier, HCPCSCode) %>% 
+  summarise(AverageMedicareAllowedAmount = sum(AverageMedicareAllowedAmount), AverageSubmittedChargeAmount = sum(AverageSubmittedChargeAmount)) %>% 
+  gather(key="key", value="value", -NationalProviderIdentifier,-HCPCSCode) %>% 
+  unite(data=., col=tmp, HCPCSCode, key, sep="") %>% 
+  spread(tmp, value, fill=0) %>% 
+  {apply(.[,-1], 2, scale)} %>% 
+  tbl_df() %>% 
+  ggpairs(lower = list(continuous = wrap("points", alpha = 0.3,    size=0.1)))
+```
+
+さらに、特徴量を増やして図示してみる.
+
+```{r}
+healthcare %>% filter(rank <= 5, EntityTypeoftheProvider=="I") %>% 
+  select(NationalProviderIdentifier, HCPCSCode, AverageMedicareAllowedAmount, AverageSubmittedChargeAmount) %>% 
+  group_by(NationalProviderIdentifier, HCPCSCode) %>% 
+  summarise(AverageMedicareAllowedAmount = sum(AverageMedicareAllowedAmount), AverageSubmittedChargeAmount = sum(AverageSubmittedChargeAmount)) %>% 
+  gather(key="key", value="value", -NationalProviderIdentifier,-HCPCSCode) %>% 
+  unite(data=., col=tmp, HCPCSCode, key, sep="") %>% 
+  spread(tmp, value, fill=0) %>% 
+  {apply(.[,-1], 2, scale)} %>% 
+  tbl_df() %>% 
+  ggpairs(lower = list(continuous = wrap("points", alpha = 0.3,    size=0.1)))
+```
+
+外れ値っぽいものは見られるが,これらがFraudなのだろか.
+
+#### How much money are spent and How many services are provided?
+
+How much money are spent and How many services are provided on what kind of service?
+
+```{r}
+healthcare %>% 
+  group_by(HCPCSCode, HCPCSDescription) %>% 
+  summarise(SumofAllowedAmount = sum(AverageMedicareAllowedAmount*NumberofServices), NumberOfServices = sum(NumberofServices)) %>% 
+  arrange(desc(SumofAllowedAmount)) %>% 
+  head(20) %>% 
+  kable()
+```
+
+#### Visualized Answers to Hackathon Challenges.
+1.How many phsycians from each state?
+
+```{r}
+phsycians_state <- healthcare %>% 
+  group_by(region, NationalProviderIdentifier) %>% 
+  summarise(n=n()) %>% 
+  summarise(n=n()) %>% 
+  inner_join(., states, by="region") %>%
+  geom_polygon(data=., aes(x=long, y=lat, group=group, fill=n)) 
+gg_base + phsycians_state + coord_fixed(1.3) + scale_fill_gradient(low=cLightBlue, high = cOrange)
+```
+
+2.How many specializations out of how many physicians?
+
+```{r}
+healthcare %>% 
+  group_by(EntityTypeoftheProvider, NationalProviderIdentifier) %>% 
+  summarise(n=n()) %>% 
+  ggplot(aes(n)) +
+  geom_histogram(aes(fill=EntityTypeoftheProvider), binwidth=1)
+```
+
+3.Map anomalies or missing data across the country or within states or counties or electoral districts.
+
+```{r}
+gg_health <- healthcare %>% 
+  filter(HCPCSCode == 99213) %>% 
+  filter(AverageSubmittedChargeAmount < 500) %>% 
+  filter(-125 < longitude, longitude < -50, 20 < latitude, latitude < 50) %>% 
+  na.omit() %>% 
+  mutate(Amount = AverageSubmittedChargeAmount*NumberofServices) %>% 
+  group_by(region) %>% 
+  summarize(mean=sum(Amount)/sum(NumberofServices)) %>% 
+  inner_join(., states, by = "region") %>%
+  geom_polygon(data=., aes(long, lat, group=group, fill=mean), color="white")
+
+gg_base+gg_health+scale_fill_gradient(low=cLightBlue, high=cOrange)+coord_fixed(1.3)+labs(title = "Subbmited Amount Per Service. HCPSCode 99213")
+```
+
+```{r}
+gg_mesh <- healthcare %>% 
+  filter(HCPCSCode == 99213) %>% 
+  filter(-125 < longitude, longitude < -50, 20 < latitude, latitude < 50) %>% 
+  na.omit() %>% 
+  mutate(mesh = cal_meshcode1_vec(latitude, longitude), Amount = AverageSubmittedChargeAmount*NumberofServices) %>% 
+  group_by(mesh) %>% 
+  summarize(mean=sum(Amount)/sum(NumberofServices)) %>% 
+  mutate(NE_lat=meshcode_to_latlong_NE_vec(mesh)["lat",] %>% unlist(), NE_lon=meshcode_to_latlong_NE_vec(mesh)["long",] %>% unlist(), 
+         SW_lat=meshcode_to_latlong_SE_vec(mesh)["lat",] %>% unlist(), SW_lon=meshcode_to_latlong_SW_vec(mesh)["long",] %>% unlist()) %>% 
+  #geom_point(data=.,aes(x=longitude, y=latitude, color=AverageSubmittedChargeAmount), size=1, alpha=1)
+  geom_rect(data=., aes(xmin=SW_lon, xmax=NE_lon, ymin=SW_lat, ymax=NE_lat, fill=mean), alpha=0.9)
+gg_base+gg_mesh+scale_fill_gradient(low=cLightBlue, high=cOrange)+coord_fixed(1.3)+labs(title = "Subbmited Amount Per Service based on Mesh. HCPSCode 99213")
+```
+
+It seems that there are some geographical dependencies.
+
+#### How much money are spent on What kind of Provider?
+
+```{r}
+healthcare %>% 
+  group_by(ProviderTypeoftheProvider) %>% 
+  summarise(AllowedAmount = sum(AverageMedicareAllowedAmount*NumberofServices), AAmean = mean(AverageMedicareAllowedAmount*NumberofServices), AAsd = sd(AverageMedicareAllowedAmount*NumberofServices),
+            NumofServices = sum(NumberofServices), NoSmean = mean(NumberofServices), NoSsd = sd(as.double(NumberofServices)), n = n()) %>% 
+  arrange(desc(AllowedAmount)) %>% 
+  head(20) %>% 
+  kable
+```
+
+#### Are there provides which provides many kinds of servise and receive much money?
+```{r}
+healthcare %>% 
+  group_by(NationalProviderIdentifier, EntityTypeoftheProvider, ProviderTypeoftheProvider) %>% 
+  summarise(n = n(), SumofMedicareAllowedAmount = sum(AverageMedicareAllowedAmount*NumberofServices), TotalNumberofServices = sum(NumberofServices)) %>% 
+  arrange(desc(SumofMedicareAllowedAmount)) %>% 
+  head(20) %>% 
+  kable(caption = "Arranged by Sum of Medicare Allowed Amount.")
+```
+
+```{r}
+healthcare %>% 
+  group_by(NationalProviderIdentifier, EntityTypeoftheProvider, ProviderTypeoftheProvider) %>% 
+  summarise(n = n(), SumofMedicareAllowedAmount = sum(AverageMedicareAllowedAmount*NumberofServices), TotalNumberofServices = sum(NumberofServices)) %>% 
+  arrange(desc(n)) %>% 
+  head(20) %>% 
+  kable(caption="Arranged by Number of services which provider provide")
+```
+
+
+What does it mean to have a not integer number of services...?
+
+As a example, now wee see the provider whose npi is 1003002809.
+
+```{r, eval=FALSE}
+healthcare %>% 
+  filter(NationalProviderIdentifier == 1003002809) %>% 
+  head(30) %>% 
+  kable
+```
+
+It seems that the provider diagnoses many times.
+
+
+#### Does the Submitted amount on the same HCPCSCode have large variance?
+
+```{r}
+healthcare %>% 
+  group_by(HCPCSCode) %>% 
+  mutate(n = n()) %>% 
+  ungroup() %>% 
+  mutate(rank = dense_rank(desc(n))) %>% 
+  filter(rank <=  15) %>% 
+  ggplot(aes(AverageSubmittedChargeAmount)) +
+  geom_histogram(aes(fill = region), binwidth=10) +
+  facet_wrap(~HCPCSCode, scale="free")
+```
+
+#### It seems that most of the 
+
+```{r}
+healthcare %>% 
+  filter(EntityTypeoftheProvider == "I", mesh=="306173") %>% 
+  group_by(HCPCSCode) %>% 
+  mutate(n = n()) %>% 
+  ungroup() %>% 
+  mutate(rank=dense_rank(desc(n))) %>% 
+  filter(rank < 5) %>% 
+  ggplot(aes(x=ProviderTypeoftheProvider, y=NumberofServices))+
+  geom_boxplot()+
+  facet_wrap(~HCPCSCode, scale="free")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+Variants of Number of Services. (meshcode 305675, 306274)
+```{r}
+healthcare %>% 
+  filter(EntityTypeoftheProvider == "I", mesh %in% c("305675","306274")) %>% 
+  group_by(HCPCSCode) %>% 
+  mutate(n = n()) %>% 
+  ungroup() %>% 
+  mutate(rank=dense_rank(desc(n))) %>% 
+  filter(rank < 20) %>% 
+  ggplot(aes(x=HCPCSCode, y=NumberofServices))+
+  geom_boxplot()+
+  facet_grid(mesh~., scale="free")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+Number of Services doesnt seems to have variants among Provider Type.
+```{r}
+healthcare %>% 
+    filter(EntityTypeoftheProvider == "I", HCPCSCode == "99213", state=="ME") %>% 
+    group_by(NationalProviderIdentifier, ProviderTypeoftheProvider) %>% 
+    summarize(sum=sum(NumberofServices)) %>% 
+    ggplot(aes(x=ProviderTypeoftheProvider, y=sum)) +
+    geom_boxplot() +
+    theme(axis.text=element_text(angle=90, hjust=1))
+```

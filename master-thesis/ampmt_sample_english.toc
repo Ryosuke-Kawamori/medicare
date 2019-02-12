@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Health care fraud and Existing works}{1}
+\contentsline {subsection}{\numberline {1.1}Health care fraud}{1}
+\contentsline {subsection}{\numberline {1.2}Existing Works}{1}
+\contentsline {section}{\numberline {2}Data}{3}
+\contentsline {subsection}{\numberline {2.1}Data Combination}{5}
+\contentsline {subsection}{\numberline {2.2}Data understanding}{6}
+\contentsline {section}{\numberline {3}Method}{8}
+\contentsline {subsection}{\numberline {3.1}Subset of all data for evaluation}{8}
+\contentsline {subsection}{\numberline {3.2}Feature engineering}{8}
+\contentsline {subsection}{\numberline {3.3}One Support Vector Machine}{9}
+\contentsline {subsection}{\numberline {3.4}Local Outlier Factor}{11}
+\contentsline {subsection}{\numberline {3.5}Evaluation Metric}{12}
+\contentsline {section}{\numberline {4}Results}{12}
+\contentsline {section}{\numberline {5}Conclusions}{15}
+\contentsline {section}{\numberline {A}Appendix}{18}
