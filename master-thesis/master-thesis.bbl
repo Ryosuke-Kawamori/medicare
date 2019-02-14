@@ -34,15 +34,19 @@ Bernhard Sch{\"o}lkopf, John~C. Platt, John Shawe-Taylor, Alex~J. Smola, and
 \bibitem{Breunig}
 Markus~M. Breunig, Hans-Peter Kriegel, Raymond~T. Ng, and J\"{o}rg Sander.
 \newblock Lof: Identifying density-based local outliers.
-\newblock {\em SIGMOD Rec.}, 29(2):93--104, May 2000.
+\newblock {\em SIGMOD Rec.}, 29(2):93--104, 2000.
 
 \bibitem{Leie}
-\url{https://www.nhpco.org/sites/default/files/public/regulatory/LEIE_Exsclusion_List.pdf}
-  Accessed on 2018 Nov 25.
+National Hospice and Palliative Care Organization. OIG’s List of Excluded
+  Individuals/Entities (LEIE) {[}Online{]}.
+  \url{https://www.nhpco.org/sites/default/files/public/regulatory/LEIE_Exsclusion_List.pdf}.
+  {[}Accessed on 11 Feb 2019{]}.
 
 \bibitem{Nhcaa}
-\url{https://www.nhcaa.org/resources/health-care-anti-fraud-resources/consumer-info-action.aspx}
-  Accessed on 2018 Dec 19.
+National Health Care Anti-Fraud Association. Consumer Info \& Action
+  {[}Online{]}.
+  \url{https://www.nhcaa.org/resources/health-care-anti-fraud-resources/consumer-info-action.aspx}.
+  {[}Accessed on 11 Feb 2019{]}.
 
 \bibitem{Multidim}
 Dallas Thornton, Roland~M. Mueller, Paulus Schoutsen, and Jos van
@@ -52,9 +56,10 @@ Dallas Thornton, Roland~M. Mueller, Paulus Schoutsen, and Jos van
 \newblock {\em Procedia technology}, 9:1252--1264, 2013.
 
 \bibitem{Prevention}
-KPMG Fraud risk management. Available :
-  \url{https://assets.kpmg.com/content/dam/kpmg/pdf/2014/05/fraud-risk-management-strategy-prevention-detection-response-O-201405.pdf}
-  Accessed 2018 Nov 25.
+KPMG Fraud risk management. Developing a strategy for prevention, detection,
+  and response {[}Online{]}.
+  \url{https://assets.kpmg.com/content/dam/kpmg/pdf/2014/05/fraud-risk-management-strategy-prevention-detection-response-O-201405.pdf}.
+  [Accessed 11 Feb 2019].
 
 \bibitem{NoEvidence}
 Arash Rashidian, Hossein Joudaki, and Taryn Vian.
@@ -85,12 +90,12 @@ Richard Bauder and Taghi Khoshgoftaar.
 \newblock Medicare fraud detection using random forest with class imbalanced
   big data.
 \newblock In {\em 2018 IEEE International Conference on Information Reuse and
-  Integration (IRI)}, pages 80--87, July 2018.
+  Integration (IRI)}, pages 80--87, 2018.
 
 \bibitem{RichardMultiple}
 Matthew Herland, Taghi Khoshgoftaar, and Richard~A. Bauder.
 \newblock Big data fraud detection using multiple medicare data sources.
-\newblock {\em Journal of Big Data}, 5(1):29, Sep 2018.
+\newblock {\em Journal of Big Data}, 5(1):29, 2018.
 
 \bibitem{TwoModels}
 Rasim~M. Musal.
@@ -103,14 +108,13 @@ Richard Bauder, Raquel da~Rosa, and Taghi Khoshgoftaar.
 \newblock Identifying medicare provider fraud with unsupervised machine
   learning.
 \newblock In {\em 2018 IEEE International Conference on Information Reuse and
-  Integration (IRI)}, pages 285--292. IEEE, 2018.
+  Integration (IRI)}, pages 285--292, 2018.
 
 \bibitem{Seo2017Identifying}
 Jiwon Seo and Ofer Mendelevitch.
 \newblock Identifying frauds and anomalies in medicare-b dataset.
 \newblock In {\em 2017 39th Annual International Conference of the IEEE
-  Engineering in Medicine and Biology Society (EMBC)}, pages 3664--3667, July
-  2017.
+  Engineering in Medicine and Biology Society (EMBC)}, pages 3664--3667, 2017.
 
 \bibitem{ekina2013application}
 Tahir Ekina, Francesca Leva, Fabrizio Ruggeri, and Refik Soyer.
@@ -124,32 +128,51 @@ Vivek Pande and Will Maas.
   Marketing}, 7(1):8--33, 2013.
 
 \bibitem{PhysiAndOther}
-\url{https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Physician-and-Other-Supplier.html}.
+Center for Medicare \& Medicaid Services. Medicare Provider Utilization and
+  Payment Data: Physician and Other Supplier {[}Online{]}.
+  \url{https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Physician-and-Other-Supplier.html}.
+  {f}[Accessed on 11 Feb 2019{]}.
 
 \bibitem{NpiFile}
-\url{http://download.cms.gov/nppes/NPI_Files.html}.
+Center for Medicare \& Medicaid Services. NPI FIles {[}Online{]}.
+  \url{http://download.cms.gov/nppes/NPI_Files.html}. {[}Accessed on 11 Feb
+  2019{]}.
 
 \bibitem{GeoCor}
-\url{http://mcdc.missouri.edu/applications/geocorr2000.html}.
+MCDC Data Applications. Geocorr 2000: Geographic Correspondence Engine
+  [Online]. \url{http://mcdc.missouri.edu/applications/geocorr2000.html}.
+  {[}Accessed on 11 Feb 2019{]}.
 
 \bibitem{Puf}
-\url{http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/Medicare-Physician-and-Other-Supplier-PUF-Methodology.pdf}.
+CENTER FOR MEDICARE \& MEDICAID SERVICES. Medicare Fee-For-Service Provider
+  Utilization \& Payment Data Physician and Other Supplier Public Use File: A
+  Methodological Overview [Online].
+  \url{http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/Downloads/Medicare-Physician-and-Other-Supplier-PUF-Methodology.pdf}.
+  {[}Accessed on 11 Feb 2019{]}.
 
-\bibitem{ASato}
+\bibitem{ASatoMesh}
 Aki-Hiro Sato, Shoki Nishimura, and Hiroe Tsubaki.
 \newblock World grid square codes: Definition and an example of world grid
   square data.
-\newblock In {\em Big Data (Big Data), 2017 IEEE International Conference on},
-  pages 4238--4247. IEEE, 2017.
+\newblock In {\em 2017 IEEE International Conference on Big Data (Big Data)},
+  pages 4238--4247, 2017.
 
 \bibitem{GeoHealth}
-\url{http://www.cbo.gov/sites/default/files/cbofiles/ftpdocs/89xx/doc8972/02-15-geoghealth.pdf}.
+CONGRESS OF THE UNITED STATES CONGRESSIONAL BUDGET OFFICE. Geographic Variation
+  in Health Care Spending [Online].
+  \url{http://www.cbo.gov/sites/default/files/cbofiles/ftpdocs/89xx/doc8972/02-15-geoghealth.pdf}.
+  [Accessed on 11 Feb 2019].
 
 \bibitem{Taxonomy}
-\url{https://data.cms.gov/Medicare-Enrollment/CROSSWALK-MEDICARE-PROVIDER-SUPPLIER-to-HEALTHCARE/j75i-rw8y}.
+CENTERS FOR MEDICARE \& MEDICAID SERVICES. CROSSWALK MEDICARE PROVIDER/SUPPLIER
+  to HEALTHCARE PROVIDER TAXONOMY [Online].
+  \url{https://data.cms.gov/Medicare-Enrollment/CROSSWALK-MEDICARE-PROVIDER-SUPPLIER-to-HEALTHCARE/j75i-rw8y}.
+  [Accessed 11 Feb 2019].
 
 \bibitem{hcpcs}
-\url{https://www.cms.gov/medicare/coding/hcpcsreleasecodesets/alpha-numeric-hcpcs-items/2018-alpha-numeric-hcpcs-file-.html}.
+Centers for Medicare \& Medicaid Services. Details for title: 2018 [Online].
+  \url{https://www.cms.gov/medicare/coding/hcpcsreleasecodesets/alpha-numeric-hcpcs-items/2018-alpha-numeric-hcpcs-file-.html},
+  [Accessed on 11 Feb 2019].
 
 \bibitem{e}
 Evgenia Dimitriadou, Kurt Hornik, Friedrich Leisch, David Meyer, and Andreas
@@ -158,26 +181,27 @@ Evgenia Dimitriadou, Kurt Hornik, Friedrich Leisch, David Meyer, and Andreas
 \newblock {\em R package}, 1:5--24, 2008.
 
 \bibitem{dbscan}
-\url{https://CRAN.R-project.org/package=dbscan}.
+Michael Hahsler, Matthew Piekenbrock, Sunil Arya and David Mount. 2018. Package
+  ‘dbscan’. \url{https://CRAN.R-project.org/package=dbscan}. [Accessed 11
+  Feb 2019].
 
 \bibitem{Diagnostic}
-\url{https://www.bizjournals.com/buffalo/news/2017/02/02/cowie-physician-and-opioid-addict-sentenced-to-24.html}.
-
-\bibitem{ASatoMesh}
-Aki-Hiro Sato, Shoki Nishimura, and Hiroe Tsubaki.
-\newblock World grid square codes: Definition and an example of world grid
-  square data.
-\newblock In {\em 2017 IEEE International Conference on Big Data (Big Data)},
-  pages 4238--4247, Dec 2017.
+BUFFALO LAW JOURNAL. Cowie, physician and opioid addict, sentenced to 24 months
+  in prison [Online].
+  \url{https://www.bizjournals.com/buffalo/news/2017/02/02/cowie-physician-and-opioid-addict-sentenced-to-24.html}.
+  [Accessed 11 Feb 2019].
 
 \bibitem{MeshJIS}
-\url{https://www.stat.go.jp/english/data/mesh/index.html}.
+Statistics Bureau, Ministry of Internal Affairs and Communications. Grid Square
+  Statistics[Online].
+  \url{https://www.stat.go.jp/english/data/mesh/index.html}. [Accessed 11 Feb
+  2019].
 
 \bibitem{CreditCard}
 Andrea~D. Pozzolo, Olivier Caelen, Reid~A. Johnson, and Gianluca Bontempi.
 \newblock Calibrating probability with undersampling for unbalanced
   classification.
 \newblock In {\em 2015 IEEE Symposium Series on Computational Intelligence},
-  pages 159--166, Dec 2015.
+  pages 159--166, 2015.
 
 \end{thebibliography}

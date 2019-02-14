@@ -24,7 +24,7 @@
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstract{%
 This thesis proposes how to find fraudulent activities from data of medical insurance claims in an unsupervised way. Firstly, we split data into homogenous groups by the providers'{}
-department, number of specialties, and their geographical location. If this is not accomplished, we may find providers performing rare operations, or providers in rural areas because of its variation in submitted charges.
+department, a number of specialties, and their geographical location. If this is not accomplished, we may find providers performing rare operations, or providers in rural areas because of its variation in submitted charges.
 Next, we apply the outlier detection method, One-SVM and LOF to these groups. Finally, we evaluate the effectiveness by using labels of providers who are excluded
 because they committed fraud. The proposed method is above random and may be used as a first line of further investigation by specialties.
 
@@ -143,13 +143,14 @@ because they committed fraud. The proposed method is above random and may be use
 The National Health Care Anti-Fraud Association estimated that at least 3$\%$(60 billion USD) of US annual health care expenditures were lost owing to outright fraud \cite{Survey}. 
 Because of the great attention being paid to the patient safety, expectations, satisfaction, and advances in technology, there have been increases in the costs, which leaves greater room for fraud to occur\cite{Dean}.
 To provide quality and safe care to legitimate patients, fraud control systems are needed. As noted above, because of upcoming health care technologies, many kinds of health care methods are in use. This makes it difficult to detect outright fraud manually in the vast amount of claims.
-Thus, fraud detection model were needed.  \par
-To detect outliers from many kinds operations, we firstly construct vectors which denote features of healthcare provider. For example, each elements of the vector are gender of the healthcare providers, number of  each operation he or she operated or amount of money paid to the provider during some period. Next, we apply
-some fraud detection model to this vector. As noted above, many kinds of healthcare methods are in use, this vector tend to be high dimension. To extract fraudulent activities from high dimensional feature vector, Van \cite{Van} used the quantile of each dimension. However, in the case of upcoding, providers submitted a lower amount for one operation and a higher amount for another operation. To cope with this situation, we need to take several dimensions into consideration simultaneously. Shin \cite{Shin} used a weighted quantile as a outlier score. In the national health care program, providers can execute approximately 7000 types of operations. Thus, it is difficult to mix these operations to calculate one score by the experts. If we have data that has information on fraud labeling, we can build a supervised model to predict fraudulent activities. However, this method needs time-consuming labeling by domain experts and may be unable to find new types of fraudulent activities that are not in the training data. 
+Thus, fraud detection models are needed.  \par
+To detect outliers from many kinds of operations, we firstly construct vectors which denote features of the healthcare providers. For example, each element of the vector are the gender of the healthcare providers, the number of  each operation he or she operated or the amount of money paid to the provider during some period. Next, we apply
+some fraud detection model to this vector. As noted above, many kinds of healthcare methods are in use, this vector tend to be high dimension. To extract fraudulent activities from the high dimensional feature vectorss, Van \cite{Van} used the quantile of each dimension. However, in the case of upcoding, providers submitted a lower amount for one operation and a higher amount for another operation. To cope with this situation, we need to take several dimensions into consideration simultaneously. Shin \cite{Shin} used a weighted quantile as an outlier score. In the national health care program, providers can execute approximately 7000 types of operations. Thus, it is difficult to mix these operations to calculate one score by the experts. If we have data that has information on fraud labeling, we can build a supervised model to predict fraudulent activities. However, this method needs time-consuming labeling by domain experts and may be unable to find new types of fraudulent activities that are not in the training data. 
 \par
 In our study, we aim to support finding providers that commit fraud by extracting possibly fraudulent cases and use this model as a first line of further investigation by specialists. Our method is applicable to unlabeled data and can be used to extract candidates of outright fraud from a large amount of data. First, we split the data into homogeneous groups because dealing with all data simultaneously is computationally intensive, and if we try to find outliers from all providers, we may only find rare providers and times of computation is very long. Next, we try to find abnormal patterns in these groups.
 %We define the normal data points as the point in the region where most of the data live and the others as abnormal. 
-We use a one-class support vector machine (One-SVM) \cite{OneSVM} and Local Outlier Factor (LOF)\cite{Breunig} to find abnormal points. The One-SVM estimates a function that is +1 in the region where most data points live and -1 in the other regions and LOF which calculates the ratio of density of the object and its surroundings. To evaluate our methodology we use the List of Excluded Individuals and Entities(LEIE)\cite{Leie}. The LEIE contains information of the individuals and the entities that are currently excluded from the participation in Medicare, Medicaid and all other Federal health care programs. Although all physicians in the LEIE are cannot be detected in practical application levels, the evaluation metrics are above random. Thus our methodology can be used as a first line of further investigation.
+We use a one-class support vector machine (One-SVM) \cite{OneSVM} and Local Outlier Factor (LOF)\cite{Breunig} to find abnormal points. The One-SVM estimates a function that is +1 in the region where most data points live and -1 in the other regions and LOF which calculates the ratio of the density of the object and its surroundings. To evaluate our methodology we use the List of Excluded Individuals and Entities(LEIE)\cite{Leie}. The LEIE contains information of the individuals and the entities that are currently excluded from the participation in Medicare, Medicaid and all other Federal health care programs. Although all physicians in the LEIE are cannot be detected in practical application levels, the evaluation metrics are above random. Thus our methodology can be used as a first line of further investigation. Source codes of our works
+are available online. \footnote{\url{https://github.com/Ryosuke-Kawamori/medicare}}
 \par
 In \Secref{sec:hcf-and-ex-works}, we note what is defined as health care fraud and existing works regarding health care fraud detection. In \Secref{sec:data}, we describe datasets we use in this study and show statistics about the healthcare payments. In \Secref{sec:method}, we outline outlier detection algorithms and evaluation metrics. In \Secref{sec:results}, we show the effectiveness of our methods. In \Secref{sec:conclusions}, we summarize our research and give possible future works.
 
@@ -217,7 +218,7 @@ Response & Respond appropriately and take corrective action when integrity break
 
 \subsubsection*{Supervised method}
 Supervised algorithms are used to categorize datasets into fraudulent cases and normal cases. 
-Ortega and He used a neural network\cite{Ortega, Neuralnet} and Bonchi used a decision tree \cite{Bonchi}. These methods need target data, which is a records of activities that were detected as fraudulent by the specialists.
+Ortega and He used a neural network\cite{Ortega, Neuralnet} and Bonchi used a decision tree \cite{Bonchi}. These methods need target data, which is records of activities that were detected as fraudulent by the specialists.
 Richard\cite{RichardRF} used Random forest with respect to various undersampling ratio data of providers because the Medicare dataset is highly unbalanced, meaning that most of the providers are labeled normal and a tiny number of providers are labeled fraudulent. 
 Richard\cite{RichardMultiple} combined three data sources of Medicare procedures and applied Logistic regression, Gradient boosting and Random forest. 
 
@@ -252,7 +253,7 @@ The second data set is the full replacement monthly NPI file, includes 5,400,369
 \Tabref{tb:npi} describe the columns of this data and \Tabref{tb:npi-ex} shows the example of this data. For example, The first row of \Tabref{tb:npi-ex} indicates that a provider whose NPI code is 101111 has only one specialty with code 207X00000X.
 \par
 
-The third data set, US zip codes, has 43,723 records. Each row records the longitude and latitude of a US zip code. We use this data to calculate which grid square code\cite{ASato} each provider belongs to.
+The third data set, US zip codes, has 43,723 records. Each row records the longitude and latitude of a US zip code. We use this data to calculate which grid square code\cite{ASatoMesh} each provider belongs to.
 \Tabref{tb:zip-ex} shows an 
 example of this data. For example, the first row of \Tabref{tb:zip-ex} indicates that the longitude and latitude of zip code: 01008 are -72.402004 and 42.277543 respectively. These three datasets have more columns, but the columns which we do not focus on are omitted.
 \par
@@ -403,7 +404,7 @@ EXCLTYPE & Amendment \\
 We combine the three types of datasets (Medicare Provider Utilization and Payment Data, Full Replacement Monthly NPI, and zip code) as shown in \Figref{fig:datacomb}
 We split data from the provider’s{} department, number of specialties, and location. We have two reasons for using this data-split method. First, handling all providers simultaneously is very time consuming because LOF has $O(n\log n)$ time complexity
 on the low\--dimensional data and One-SVM algorithm has $O(n^3)$ computational complexity, where $n$ is the number of the data points. Even though we split the data, the complexity does no decrease in the order of $n$. They decrease to $O(n\log{\frac{n}{M}})$ and $O(\frac{n^{3}}{M^{2}})$, where $M$ is the number of data split. However the number of provider $n$ is limited, the reduce of the time is effective and this is effective when we use parallel computing. 
-Second, the variance in the provider’s {} feature vectors come from the provider's {} types, specialties, geographical location, and so on. With regard to geographical variance, we can easily assume that the providers in urban areas file more claims because they have many patients. It is also pointed out that spending per Medicare beneficiary also has a high variance\cite{GeoHealth}. Thus, if we try to find fraudulent claims from all providers, we may find providers who have rare specialties or who are in rural areas. These are the reasons to split the data. To split the data by location, we calculated the first grid square code \cite{ASato} from their geographical locations (latitude and longitude) by converting their zip codes.
+Second, the variance in the provider’s {} feature vectors come from the provider's {} types, specialties, geographical location, and so on. With regard to geographical variance, we can easily assume that the providers in urban areas file more claims because they have many patients. It is also pointed out that spending per Medicare beneficiary also has a high variance\cite{GeoHealth}. Thus, if we try to find fraudulent claims from all providers, we may find providers who have rare specialties or who are in rural areas. These are the reasons to split the data. To split the data by location, we calculated the first grid square code \cite{ASatoMesh} from their geographical locations (latitude and longitude) by converting their zip codes.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=.8]{../img/datacomb.png}}
@@ -480,17 +481,17 @@ m_{j}^{k}= \cfrac{1}{N_k} \sum_{i=1}^{N_{k}}x_{ij}^{k},
 \end{equation}
 %where $D_k$ is a set of index $i$ included in grid square $k$.
 where $N_{k}$ is a number of observed points in the grid squre $k$.
-\Figref{fig:geo-vari-map} shows the mean grid square of the total submitted amount of money on each grid $k$, and \Figref{fig:geo-vari-his} shows a histogram of the mean grid square of the total submitted amount of money. These figures indicate that there is strong geographical dependence with regard to the total submitted amount of money.
+\Figref{fig:geo-vari-map} shows the mean grid square of the total submitted amount of money on each grid $k$, and \Figref{fig:geo-vari-his} shows a histogram of the mean grid square of the total submitted amount of money. These figures indicate that there is a strong geographical dependence with regard to the total submitted amount of money.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.6]{../img/geographical-variance-map.pdf}}
-\caption{Mean of the total submitted amount of money in each grid. Red corresponds to high submitted amount of money, and blue corresponds to the low submitted amount of money. We can see that the total submitted amount of money is high in urban areas and low in rural areas.}
+\caption{Mean of the total submitted amount of money in each grid. Red corresponds to the high submitted amount of money, and blue corresponds to the low submitted amount of money. We can see that the total submitted amount of money is high in urban areas and low in rural areas.}
 \label{fig:geo-vari-map}
 \end{figure}
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.6]{../img/geographical-variance-histogram.pdf}}
-\caption{Histograms of the total submitted amount of money. X-axis shows the mean of total submitted amount in each grid. We can see that histogram has a fat tail, and the submitted amount of money is dependent on the area in the US.}
+\caption{Histograms of the total submitted amount of money. The x-axis shows the mean of the total submitted amount in each grid. We can see that histogram has a fat tail, and the submitted amount of money is dependent on the area in the US.}
 \label{fig:geo-vari-his}
 \end{figure}
 
@@ -498,7 +499,7 @@ where $N_{k}$ is a number of observed points in the grid squre $k$.
 
 
 \subsection*{Variation by providers’{} number of specialties}
-\Figref{fig:num-spc-vari} shows a histogram of the total submitted amount of money by the provider’{}s specialty. We can see that variations by the provider’s number of specialty is not as high as by the geographical location and the type of providers. Thus, we may not need to split data by the provider'{}s number of specialties.
+\Figref{fig:num-spc-vari} shows a histogram of the total submitted amount of money by the provider’{}s specialty. We can see that variations by the provider’s number of specialty are not as high as by the geographical location and the type of providers. Thus, we may not need to split data by the provider'{}s number of specialties.
 
 
 \begin{figure*}[ht]
@@ -534,7 +535,7 @@ where $N_{k}$ is a number of observed points in the grid squre $k$.
     \end{tabular}
     
     
-     \caption{\subref{fig:1} depicts histogram of log of total submitted amount of money by providers who have one specialty. \subref{fig:3} depicts that by providers who have 3 specialties. \subref{fig:5} depicts that by providers who have 5 specialties. \subref{fig:10} depicts that by providers who have 10 specialties.}
+     \caption{\subref{fig:1} depicts the histogram of the log of the total submitted amount of money by providers who have one specialty. \subref{fig:3} depicts that by providers who have 3 specialties. \subref{fig:5} depicts that by providers who have 5 specialties. \subref{fig:10} depicts that by providers who have 10 specialties.}
       \label{fig:num-spc-vari}
 \end{figure*}
 
@@ -661,7 +662,7 @@ Provider-Mesh & 967 \\
 
 \subsection{One Support Vector Machine}
 Here we remove the index of data-split $k$ for clarity. Algorithms are applied in each data-separation $k$.
-To detect fraudulent provider activity, we use a one-class support vector machine\cite{OneSVM} as an outlier extraction method. One support vector machine separates data from the origin to find the decision function that takes +1 in a region capturing most of the data points and -1 elsewhere. Mapping data into the feature space by function $\bm{\Phi}(\bm{x}): X \rightarrow F$, where $X$ is an input space and $F$ is a feature space that has an inner product and applying the one support vector machine in this space enable us to solve a nonlinear problem. One support vector machine is expressed as below,
+To detect fraudulent provider activity, we use a one-class support vector machine\cite{OneSVM} as an outlier extraction method. One support vector machine separates data from the origin to find the decision function that takes +1 in a region capturing most of the data points and -1 elsewhere. Mapping data into the feature space by function $\bm{\Phi}(\bm{x}): X \rightarrow F$, where $X$ is an input space and $F$ is a feature space that has an inner product and applying the one support vector machine in this space enables us to solve a nonlinear problem. One support vector machine is expressed as below,
 
 \begin{flalign}
 &\min_{\bm{w}\in F, \bm{\xi}\in \mathbb{R}^N, \rho \in \mathbb{R}} \cfrac{1}{2} ||\bm{w}||^2 + \cfrac{1}{\nu N} \sum_{i=1}^{N}\xi_{i}- \rho \nonumber \\
@@ -751,7 +752,7 @@ We evaluate the effectiveness of data our data-extraction method using the true 
 The true positive rate($TPR$) and the false negative rate ($FNR$) are defined as follows : 
 \begin{flalign}
 	TPR = \cfrac{TP}{TP+FN}, \\
-	FNR = \cfrac{FN}{FN+TP},
+	FPR = \cfrac{FN}{FN+TP},
 \end{flalign}
 where $TP$ is the number of physicians that are truly classified as fraudulent and $FN$ is the number of physicians that are falsely classified as normal.
 The ROC curve created by plotting $TPR$ against the $FPR$ and the AUC is the area of the ROC curve. If physicians are randomly selected, the ROC curve is a straight line through two points $(0,0)$ and $(1,1)$ and the AUC is $0.5$.
@@ -774,11 +775,11 @@ However, they do not change much with respect to the data-split and the feature.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.5]{../img/onesvm-roc.pdf}}
-\caption{ROC curve of One-SVM with respect to the data-split: PROVIDER and PROVIDER-GRID of the feature: STAT and HCPCS. Type shows data-split method and how features are created.
+\caption{ROC curve of One-SVM with respect to the data-split: PROVIDER and PROVIDER-GRID of the feature: STAT and HCPCS. Type shows the data-split method and how features are created.
 %Red curve corresponds to data split method with provider of HCPCS. Green curve corresponds to data-split method for provider of Stat. 
 %Bright green curve corresponds to data-split method for provider-mesh of HCPCS, and purple curve corresponds to data-split method for provider-mesh of Stat.
 %Value side of points shows hyperparameter $\nu$ of one-SVM. 
-X-axis shows true positive rate, and Y-axis shows false positive rate. All ROC curves are slightly above straight line through points $(0,0)$ and $(1,1)$. However, they do not change much 
+The x-axis shows true positive rate, and the y-axis shows false positive rate. All ROC curves are slightly above straight line through points $(0,0)$ and $(1,1)$. However, they do not change much 
 with respect to data-splits and features.
 }
 \label{fig:roc-svm}
@@ -795,7 +796,7 @@ All ROC curves are slightly above the straight line through points $(0,0)$ and $
 \centerline{\includegraphics[scale=0.5]{../img/lof-roc.pdf}}
 \caption{ROC curve of LOF with respect to data split: PROVIDER, GRID and PROVIDER-GRID of the feature: STAT and HCPCS. Type shows their data-split method and how their features are created.
 %Value side of points shows hyperparameter $\nu$ of one-SVM. 
-X-axis shows true positive rate, and Y-axis shows false positive rate. None means there was no data split. All ROC curves are slightly above straight line through points $(0,0)$ and $(1,1)$. In particular, data split for provider of feature with HCPCS had the best result.}
+The x-axis shows true positive rate, and the y-axis shows false positive rate. None means there was no data split. All ROC curves are slightly above straight line through points $(0,0)$ and $(1,1)$. In particular, data split for PROVIDER of the feature with HCPCS had the best result.}
 \label{fig:roc-lof}
 \end{figure}
 
@@ -844,7 +845,7 @@ X-axis shows true positive rate, and Y-axis shows false positive rate. None mean
 We cannot calculate the data-split: GRID of feature: HCPCS and NONE: without any data-split with the One-SVM because of the time of the calculation.
 First, with respect to outlier detection algorithms, 3 out of 5 AUC scores of LOF are above the AUC score of One-SVM and 1 out of 5 AUC score of LOF are almost same with the AUC score of One-SVM.
 %Next, with respect to feature, The AUC of the One-SVM changed slightly with respect to the data-split and features, but that of LOF changed significantly.
-Next, with respect to feature, 4 out of 5 AUC scores of the feature: HCPCS are above STAT.  Third, with respect to data-split, data-split: PROVIDER-GRID of feature: STAT and data-split: PROVIDER of feature: HCPCS are 
+Next, with respect to feature, 4 out of 5 AUC scores of the feature: HCPCS are above STAT.  Third, with respect to data-split, data-split: PROVIDER-GRID of the feature: STAT and the data-split: PROVIDER of the feature: HCPCS are 
 good combination.
  %By comparing the data-split: PROVIDER and NONE of LOF, the data-split: PROVIDER is effective, although the data split:  PROVIDER-GRID is not effective or even worse when using LOF. \par
 There are two reasons for the false negatives. First, a provider who commits fraud steals a little and his or her fraudulent activity is not apparent in the data. However, this provider was excluded 
@@ -912,11 +913,11 @@ As a typical example, \Figref{fig:outlier} shows log-transformed submitted charg
 LOF with the data-split: PROVIDER and feature: HCPCS has the best AUC score. Here we see more detail result of the model and matches between outliers and frauds.
 \Tabref{tb:auc-provider} shows the AUC scores by the provider types. We see several providers who commit fraud. The AUC score of Neurosurgery is the highest. 
 The NPI code of the provider who committed fraud is 1003904830. His score gets top 3 score out of 441 Neurosurgery providers. \Figref{fig:Neuro} shows the histograms of the submitted amount of 
-money on each HCPCS procedure in Neurosurgery and submitted amount of money with NPI code, 1003904830. He submitted most for these four HCPCS codes.
+money on each HCPCS procedure in Neurosurgery and the submitted amount of money with NPI code, 1003904830. He submitted most for these four HCPCS codes.
 \Figref{fig:Neuro} shows that he submitted more than normal providers with these HCPCS codes and this can be a sign of fraud. 
 Next, in the case of Diagnostic Radiology, the NPI code of provider who committed fraud is 1619117538. His outlier score was top 294 out of the 4298 diagnostic radiology providers.
 News reports that he wrote more than 250 illegal prescriptions over a four-year period, starting in 2010, for Oxycodone, Percocet and, Hydrocodone\cite{Diagnostic}. 
-\Figref{fig:Diagnostic} shows the histograms of the submitted amount of money on each HCPCS procedure in Diagnostic Radiology and submitted amount of money with NPI code, 1619117538.
+\Figref{fig:Diagnostic} shows the histograms of the submitted amount of money on each HCPCS procedure in Diagnostic Radiology and the submitted amount of money with NPI code, 1619117538.
 His records of submission do not record high amounts for these kinds of operations, though he gets higher outlier score than other diagnostic radiology providers. We think that there are two possible reasons for the illegal activities not being recorded in the datasets.
 First, the illegal submission procedure is not included in the Medicare program. Second, this illegal operation was stopped before 2015 and were not recorded in our dataset. We cannot explain why he gets high outlier score from the histograms of his submission amounts.
 \par
@@ -1004,17 +1005,17 @@ First, the illegal submission procedure is not included in the Medicare program.
       \label{fig:Diagnostic}
 \end{figure}
 \par
-We evaluated whether outliers and frauds are matched in the healthcare insurance claims. However, the score in other domain can be different from the Medicare cases. We applied One-SVM and LOF to credit card fraud detection.
+We evaluated whether outliers and frauds are matched in the healthcare insurance claims. However, the score in other domain can be different from Medicare cases. We applied One-SVM and LOF to credit card fraud detection.
 Actually, the performance of credit card fraud detection is different from the medicare cases. One-SVM outperformed LOF and the score is significantly high. The result of is not different from random extraction. This implies that 
 the detection performance, matches between fraud and outlier, is determined not only by detection algorithm but also data features.
 
 
 \subsection{Ratio of the outliers in One-SVM}
 Next, we changed hyperparameter $\nu$ of One-SVM at 20 points from 0.001 to 0.98. \Figref{fig:nu} shows the ratio of outliers on various $\nu$.
-As we expected, we can easily see as $\nu$ increases, the ratio of the outliers also increases. Thus, we can regulate the ratio of the outliers by changing $\nu$.
+As we expected, we can easily see as $\nu$ increases, the ratio of outliers also increases. Thus, we can regulate the ratio of the outliers by changing $\nu$.
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.32]{../img/ratio-of-outliers.pdf}}
-\caption{Ratio of the outliers in terms of  $\nu$. x axis shows the hyperparameter $\nu$ which is an upper bound of the ratio of the outliers and y axis shows
+\caption{Ratio of the outliers in terms of  $\nu$. The x-axis shows the hyperparameter $\nu$ which is an upper bound of the ratio of the outliers and the y-axis shows
 the ratio of outlier detected by One-SVM of which $\nu$ = $x$.}
 \label{fig:nu}
 \end{figure}
@@ -1026,7 +1027,7 @@ LOF performs better than One-SVM. LOF with data-split: Provider and feature: HCP
 \par
 As future work, first, as we see in the design of feature vectors and their performance, the feature engineering is crucial when we define the fraud claims in the health care receipts. We may need deep knowledge of the healthcare domain in order to select effective features.
 Second, we should interview healthcare fraud subject matter experts whether providers with higher outlier scores are fraudulent. Some providers who are not in LEIE datasets, but have high outlier score may be the real fraudulent providers.
-Third, the tradeoff between the true positive rate and the false positive rate should be adjusted. If we allow only low true positive rates, then  there are more rooms for benefits by increasing the cost of the experts who find the providers actually committing fraud from fraudulent cases in order to prevent them from receiving money. On the other hand, if we allow a high true positive rate, the cost of the experts increases, and the costs are higher than the money given to the providers who commit fraud. 
+Third, the tradeoff between the true positive rate and the false positive rate should be adjusted. If we allow only low true positive rates, then  there are more rooms for benefits by increasing the cost of the experts who find the providers actually committing fraud from fraudulent cases in order to prevent them from receiving money. On the other hand, if we allow a high true positive rate, the cost of the experts increase, and the costs are higher than the money given to the providers who commit fraud. 
 Fourth, more sophisticated datasets are needed. We used Medicare Provider Utilization and Payment Data, Full Replacement Monthly NPI in 2015 and List of Excluded Individuals after 2015. However, if their exclusion resulted from illegal activities before 2015, then their illegal activities are not recorded in the Provider Utilization and Payment Data, Full Replacement Monthly NPI and List of Excluded Individuals includes providers. In addition List of Excluded Individuals include providers who were excluded not only for their fraud-related activities but for their other illegal activities such as physical contact with their patients. Thus, more sophisticated datasets that record provider activities and frauds related to these activities are needed.
 
 %\bibliography{conference} %bibファイルの.bibの前の部分
@@ -1037,7 +1038,7 @@ Fourth, more sophisticated datasets are needed. We used Medicare Provider Utiliz
 %%% Acknowledgments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgment
 The author would like to express his sincere gratitude to Associate Professor
-Aki-Hiro Sato for his helpful advices and appreciate the feedback offered by Professor Ken Umeno.
+Aki-Hiro Sato for his helpful advices and appreciate the feedback offered by the members of my laboratory.
 
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% If you want to use BibTeX, delete the above and insert code here.
@@ -1137,7 +1138,7 @@ sampling.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.5]{../img/credit-roc.pdf}}
-\caption{ROC curves of the LOF and One-SVM. Model shows the type of outlier detection methods. One-SVM outperforms LOF.}
+\caption{ROC curves of the LOF and One-SVM. The Model corresponds to the outlier detection methods. One-SVM outperforms LOF.}
 \label{fig:credit-roc}
 \end{figure}
 

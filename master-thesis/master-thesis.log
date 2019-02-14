@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.11.18)  13 FEB 2019 03:09
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.11.18)  13 FEB 2019 09:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -906,64 +906,87 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
  [3
 
 
-] [1
-
-]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 163.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 163.
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 163.
-
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 163.
-LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 1
-74.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 174.
- [2]
-Underfull \vbox (badness 10000) detected at line 212
- []
-
-[3] [4]
-Underfull \vbox (badness 10000) detected at line 286
- []
-
-[5]
-Underfull \vbox (badness 10000) detected at line 302
- []
-
-[6]
-Overfull \hbox (22.60976pt too wide) in paragraph at lines 340--350
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 395
- []
-
-[7]
-File: ../img/datacomb.png Graphic file (type bmp)
- <../img/datacomb.png> (I search kanjifont definition file: . . )
+] (I search kanjifont definition file: . . )
 (I search font definition file: . . . . . . . . . . . )
-LaTeX Font Info:    Try loading font information for T1+ntxsups on input line 4
-18.
+LaTeX Font Info:    Try loading font information for T1+ntxsups on input line 1
+53.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/newtx/t1ntxsups.fd
 File: t1ntxsups.fd 2015/01/17 v1.0
 )
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 10.95pt on input line 418.
+(Font)              scaled to size 10.95pt on input line 153.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 418.
+(Font)              scaled to size 9.0pt on input line 153.
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 9.0pt on input line 418.
- [8]
+(Font)              scaled to size 9.0pt on input line 153.
+
+(I search kanjifont definition file: . . ) (I search font definition file: . .
+. . . . . . . . . )
+LaTeX Font Info:    Try loading font information for T1+ntxtt on input line 153
+.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 9.0pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
+(Font)              scaled to size 5.5pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.0pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 7.3pt on input line 153.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 5.5pt on input line 153.
+ [1
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 164.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 164.
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <12> not available
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 164.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 164.
+LaTeX Font Info:    Try loading font information for TS1+ntxtlf on input line 1
+75.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 175.
+ [2]
+Underfull \vbox (badness 10000) detected at line 213
+ []
+
+[3] [4]
+Underfull \vbox (badness 10000) detected at line 287
+ []
+
+[5]
+Underfull \vbox (badness 10000) detected at line 303
+ []
+
+[6]
+Overfull \hbox (22.60976pt too wide) in paragraph at lines 341--351
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 396
+ []
+
+[7]
+File: ../img/datacomb.png Graphic file (type bmp)
+ <../img/datacomb.png> [8]
 File: ../img/provider-type-variance/Internal-Medicine.pdf Graphic file (type pd
 f)
 
@@ -980,7 +1003,7 @@ File: ../img/provider-type-variance/Certified-Nurse-Midwife.pdf Graphic file (t
 ype pdf)
 
 <../img/provider-type-variance/Certified-Nurse-Midwife.pdf>
-Overfull \hbox (14.73749pt too wide) in paragraph at lines 423--453
+Overfull \hbox (14.73749pt too wide) in paragraph at lines 424--454
 [][] 
  []
 
@@ -1000,17 +1023,17 @@ File: ../img/spc-type-variance/5.pdf Graphic file (type pdf)
 <../img/spc-type-variance/5.pdf>
 File: ../img/spc-type-variance/10.pdf Graphic file (type pdf)
  <../img/spc-type-variance/10.pdf>
-Overfull \hbox (14.73747pt too wide) in paragraph at lines 505--535
+Overfull \hbox (14.73747pt too wide) in paragraph at lines 506--536
 [][] 
  []
 
 [12]
-Underfull \hbox (badness 2351) in paragraph at lines 596--596
+Underfull \hbox (badness 2351) in paragraph at lines 597--597
 []|\T1/ntxtlf/m/n/10.95 One pa-tient be-ing tar-geted by mul-ti-ple
  []
 
 
-Underfull \vbox (badness 10000) detected at line 596
+Underfull \vbox (badness 10000) detected at line 597
  []
 
 [13]
@@ -1021,7 +1044,7 @@ Missing character: There is no ^^e2 in font ntx-Regular-tlf-ot1!
 Missing character: There is no ^^81 in font ntx-Regular-tlf-ot1!
 Missing character: There is no ^^a1 in font ntx-Regular-tlf-ot1!
 
-Overfull \hbox (15.48064pt too wide) in paragraph at lines 609--609
+Overfull \hbox (15.48064pt too wide) in paragraph at lines 610--610
 [] 
  []
 
@@ -1062,16 +1085,8 @@ File: ../img/lof-roc.pdf Graphic file (type pdf)
 (../data/AUC-Provider.tex
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 6.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 6.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 6.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 6.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 7.3pt on input line 6.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 5.5pt on input line 6.
 
 Overfull \hbox (15.13635pt too wide) in paragraph at lines 6--31
  [] 
@@ -1087,7 +1102,7 @@ File: ../img/fraud/Neurosurgery-76881.pdf Graphic file (type pdf)
 <../img/fraud/Neurosurgery-76881.pdf>
 File: ../img/fraud/Neurosurgery-99214.pdf Graphic file (type pdf)
  <../img/fraud/Neurosurgery-99214.pdf>
-Overfull \hbox (14.73747pt too wide) in paragraph at lines 929--962
+Overfull \hbox (14.73747pt too wide) in paragraph at lines 930--963
 [][] 
  []
 
@@ -1103,7 +1118,7 @@ File: ../img/fraud/Diagnostic-Radiology-74178.pdf Graphic file (type pdf)
 File: ../img/fraud/Diagnostic-Radiology-72110.pdf Graphic file (type pdf)
 
 <../img/fraud/Diagnostic-Radiology-72110.pdf>
-Overfull \hbox (14.73747pt too wide) in paragraph at lines 969--999
+Overfull \hbox (14.73747pt too wide) in paragraph at lines 970--1000
 [][] 
  []
 
@@ -1120,93 +1135,114 @@ LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 6.
-(I search kanjifont definition file: . . ) (I search font definition file: . .
-. . . . . . . . . )
-LaTeX Font Info:    Try loading font information for T1+ntxtt on input line 40.
-
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 40.
+(Font)              scaled to size 10.95pt on input line 42.
 
-Underfull \hbox (badness 1354) in paragraph at lines 44--46
-[][]$\T1/ntxtt/m/n/10.95 https : / / www . nhcaa . org / resources / health-[]c
-are-[]anti-[]fraud-[]resources /
+Underfull \hbox (badness 1354) in paragraph at lines 46--50
+[]$\T1/ntxtt/m/n/10.95 https : / / www . nhcaa . org / resources / health-[]car
+e-[]anti-[]fraud-[]resources /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
-[]\T1/ntxtlf/m/n/10.95 KPMG Fraud risk man-age-ment. Avail-able : []$\T1/ntxtt/
-m/n/10.95 https : / /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--58
-\T1/ntxtt/m/n/10.95 assets . kpmg . com / content / dam / kpmg / pdf / 2014 / 0
-5 /
- []
-
-
-Overfull \hbox (11.87535pt too wide) in paragraph at lines 55--58
+Overfull \hbox (11.87535pt too wide) in paragraph at lines 59--63
 \T1/ntxtt/m/n/10.95 fraud-[]risk-[]management-[]strategy-[]prevention-[]detecti
 on-[]response-[]O-[]201405 .
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-[][]$\T1/ntxtt/m/n/10.95 https : / / www . cms . gov / Research-[]Statistics-[]
-Data-[]and-[]Systems /
+Underfull \hbox (badness 1852) in paragraph at lines 131--135
+\T1/ntxtlf/m/n/10.95 ment Data: Physi-cian and Other Sup-plier [On-line]. []$\T
+1/ntxtt/m/n/10.95 https : / / www . cms . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
-\T1/ntxtt/m/n/10.95 Statistics-[]Trends-[]and-[]Reports / Medicare-[]Provider-[
-]Charge-[]Data /
+Underfull \hbox (badness 3323) in paragraph at lines 131--135
+\T1/ntxtt/m/n/10.95 Research-[]Statistics-[]Data-[]and-[]Systems / Statistics-[
+]Trends-[]and-[]Reports /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
+\T1/ntxtt/m/n/10.95 Medicare-[]Provider-[]Charge-[]Data / Physician-[]and-[]Oth
+er-[]Supplier . html$[]\T1/ntxtlf/m/n/10.95 .
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
-[][]$\T1/ntxtt/m/n/10.95 http : / / www . cms . gov / Research-[]Statistics-[]D
-ata-[]and-[]Systems /
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
+[]\T1/ntxtlf/m/n/10.95 CENTER FOR MEDI-CARE & MED-I-CAID SER-VICES. Medi-care
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
+\T1/ntxtlf/m/n/10.95 Fee-For-Service Provider Uti-liza-tion & Pay-ment Data Phy
+si-cian and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
+\T1/ntxtlf/m/n/10.95 Other Sup-plier Pub-lic Use File: A Method-olog-i-cal Over
+view [On-line].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
+[]$\T1/ntxtt/m/n/10.95 http : / / www . cms . gov / Research-[]Statistics-[]Dat
+a-[]and-[]Systems /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--152
 \T1/ntxtt/m/n/10.95 Statistics-[]Trends-[]and-[]Reports / Medicare-[]Provider-[
 ]Charge-[]Data /
  []
 
 
-Underfull \hbox (badness 4036) in paragraph at lines 146--147
-[][]$\T1/ntxtt/m/n/10.95 http : / / www . cbo . gov / sites / default / files /
- cbofiles / ftpdocs / 89xx /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
-[][]$\T1/ntxtt/m/n/10.95 https : / / data . cms . gov / Medicare-[]Enrollment /
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
+[]\T1/ntxtlf/m/n/10.95 CENTERS FOR MEDI-CARE & MED-I-CAID SER-VICES. CROSS-WALK
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-[][]$\T1/ntxtt/m/n/10.95 https : / / www . cms . gov / medicare / coding / hcpc
-sreleasecodesets /
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
+\T1/ntxtlf/m/n/10.95 MEDI-CARE PROVIDER/-SUP-PLIER to HEALTH-CARE PROVIDER TAX-
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-[][]$\T1/ntxtt/m/n/10.95 https : / / www . bizjournals . com / buffalo / news /
- 2017 / 02 / 02 /
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
+\T1/ntxtlf/m/n/10.95 ON-OMY [On-line]. []$\T1/ntxtt/m/n/10.95 https : / / data 
+. cms . gov / Medicare-[]Enrollment /
  []
 
-) [29]
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
+\T1/ntxtt/m/n/10.95 CROSSWALK-[]MEDICARE-[]PROVIDER-[]SUPPLIER-[]to-[]HEALTHCAR
+E / j75i-[]rw8y$[]\T1/ntxtlf/m/n/10.95 . [Ac-
+ []
+
+
+Underfull \hbox (badness 5652) in paragraph at lines 173--176
+[]\T1/ntxtlf/m/n/10.95 Centers for Medi-care & Med-i-caid Ser-vices. De-tails f
+or ti-tle: 2018 [On-
+ []
+
+
+Underfull \hbox (badness 4859) in paragraph at lines 173--176
+\T1/ntxtlf/m/n/10.95 line]. []$\T1/ntxtt/m/n/10.95 https : / / www . cms . gov 
+/ medicare / coding / hcpcsreleasecodesets /
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 173--176
+\T1/ntxtt/m/n/10.95 alpha-[]numeric-[]hcpcs-[]items / 2018-[]alpha-[]numeric-[]
+hcpcs-[]file-[] . html$[]\T1/ntxtlf/m/n/10.95 , [Ac-
+ []
+
+[29]) [30]
 File: ../img/credit-roc.pdf Graphic file (type pdf)
- <../img/credit-roc.pdf> [30]
+ <../img/credit-roc.pdf> [31]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1145.
+nput line 1146.
  (../script/script/credit-for-tex.R
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
@@ -1233,8 +1269,8 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `T1/ntxtt/bx/n' will be
 (Font)              scaled to size 10.0pt on input line 11.
- [31] [32])
-Excluding 'comment' comment. (../data/exclusion.tex [33] [34]) [35]
+ [32] [33])
+Excluding 'comment' comment. (../data/exclusion.tex [34] [35]) [36]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: dvips
 * paper: <default>
@@ -1269,7 +1305,7 @@ Excluding 'comment' comment. (../data/exclusion.tex [33] [34]) [35]
 
 File: logo.pdf Graphic file (type pdf)
  <logo.pdf>
-[36
+[37
 
 
 
@@ -1306,21 +1342,21 @@ File: logo.pdf Graphic file (type pdf)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- [37
+ [38
 
 
 
 
-] [38
+] [39
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1177.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1178.
  (./master-thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1177.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1178.
 
 Package rerunfilecheck Info: File `master-thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 961F0BE04B2FB773C48E0185432D23EB;1605.
@@ -1330,12 +1366,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12402 strings out of 493653
- 180038 string characters out of 6148873
- 496131 words of memory out of 5000000
- 15685 multiletter control sequences out of 15000+600000
- 105631 words of font info for 203 fonts, out of 8000000 for 9000
+ 12416 strings out of 493653
+ 180250 string characters out of 6148873
+ 471264 words of memory out of 5000000
+ 15699 multiletter control sequences out of 15000+600000
+ 112099 words of font info for 218 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 59i,16n,94p,4499b,1828s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,16n,94p,4446b,1824s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on master-thesis.dvi (41 pages, 179476 bytes).
+Output written on master-thesis.dvi (42 pages, 182316 bytes).

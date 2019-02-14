@@ -3,45 +3,45 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: master-thesis.aux
 The style file: unsrt.bst
 Database file #1: conference.bib
-You've used 35 entries,
+You've used 34 entries,
             1791 wiz_defined-function locations,
-            643 strings with 9457 characters,
-and the built_in function-call counts, 7428 in all, are:
-= -- 635
-> -- 281
-< -- 7
-+ -- 110
-- -- 75
-* -- 452
-:= -- 1007
-add.period$ -- 82
-call.type$ -- 35
-change.case$ -- 22
+            636 strings with 11003 characters,
+and the built_in function-call counts, 6979 in all, are:
+= -- 584
+> -- 270
+< -- 6
++ -- 106
+- -- 72
+* -- 416
+:= -- 952
+add.period$ -- 77
+call.type$ -- 34
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 349
-empty$ -- 835
-format.name$ -- 75
-if$ -- 1743
+cite$ -- 34
+duplicate$ -- 326
+empty$ -- 794
+format.name$ -- 72
+if$ -- 1631
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 22
-newline$ -- 152
-num.names$ -- 22
-pop$ -- 174
+int.to.str$ -- 34
+missing$ -- 21
+newline$ -- 147
+num.names$ -- 21
+pop$ -- 168
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 239
+skip$ -- 224
 stack$ -- 0
-substring$ -- 513
-swap$ -- 109
-text.length$ -- 7
+substring$ -- 473
+swap$ -- 96
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 62
-width$ -- 37
-write$ -- 312
+while$ -- 58
+width$ -- 36
+write$ -- 299
 is.kanji.str$ -- 0
