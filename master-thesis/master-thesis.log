@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.11.18)  13 FEB 2019 09:27
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.11.18)  14 FEB 2019 15:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1368,10 +1368,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  12416 strings out of 493653
  180250 string characters out of 6148873
- 471264 words of memory out of 5000000
+ 471281 words of memory out of 5000000
  15699 multiletter control sequences out of 15000+600000
  112099 words of font info for 218 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  59i,16n,94p,4446b,1824s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on master-thesis.dvi (42 pages, 182316 bytes).
+Output written on master-thesis.dvi (42 pages, 182360 bytes).

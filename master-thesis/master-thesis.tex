@@ -12,7 +12,7 @@
       {Outlier detection technique to extract candidates of fraud from medical insurance claims}
       % [title for spine (option)]{title}
 %%% Supervisors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\supervisors{Aki-Hiro Sato}{Associate Professor}             % First supervisor  {name}{title}
+\supervisors{Aki-Hiro Sato}{Program Specific Associate Professor}             % First supervisor  {name}{title}
             {}{} % Second supervisor {name}{title}
             {}{}                               % Third supervisor  {name}{title}
 %%% Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +230,7 @@ Van\cite{Van} used a more story-based method. For example, they used the deviati
 \subsection*{Others}
 Pande\cite{Pande} outlined the characteristics of physicians who were convicted of fraud, the consequences of their convictions, and the proposed problems of policies against fraud.
 Li \cite{Survey} gave a survey, which includes a background of the health care fraud, data management, 
-,models to detect fraud, and their evaluation.
+models to detect fraud, and their evaluation.
 
 
 
@@ -884,7 +884,7 @@ We have not had any opportunities to interview specialists yet. However it seems
 \subsection*{Outlier}
 \Figref{fig:dev-out-amt} shows the histogram of log-transformed submitted charged amount of money of top 15 most claimed service. 
 HCPCS code: 99213 is established patient office or other outpatient visit, typically 10 minutes, 99214 is established patient office or other outpatient visit, typically 15 minutes and  99215 is established patient office or other outpatient visit, typically 40 minutes. We can see that ratio of outlier providers that claimed HCPCS code 99213 or 99214 is high compared to normal providers. This may indicate that we could find the up-coding fraud. Up-coding means billing more costly services than the one actually performed. It is said that up-coding time is often committed by Psychiatrist\cite{Pande}.
-\Figref{fig:out-map} shows outliers which we found by using the proposed method in 1st world gird 30617.
+\Figref{fig:out-map} shows outliers which we found by using the proposed method in 1st world grid 30617.
 
 \begin{figure}[H]
 \centerline{\includegraphics[scale=0.6]{../img/Dist-out-amount.pdf}}
@@ -1055,9 +1055,9 @@ Aki-Hiro Sato for his helpful advices and appreciate the feedback offered by the
 \section{Appendix}
 
 \subsection{World Grid Square Code}\label{sec:world-grid-square-code}
-World grid square code\cite{ASatoMesh} is an extension of  the Japanese Industrial Standard (JIS) for gird square codes (JIS X0410 \cite{MeshJIS}) established in 1976.
+World grid square code\cite{ASatoMesh} is an extension of  the Japanese Industrial Standard (JIS) for grid square codes (JIS X0410 \cite{MeshJIS}) established in 1976.
 World grid square code is defined from 1\--st grid square code to 6 \--th grid square code. However we only used 1\-- st grid square code. Here, we give the definition of 1\--st world grid square code.
-See \cite{ASatoMesh} for more details. Firstly, we define three binary variable $x,y,z$ to separate the earth into eight areas based on latitude and longitude and construct 0\--th level gird square code.
+See \cite{ASatoMesh} for more details. Firstly, we define three binary variable $x,y,z$ to separate the earth into eight areas based on latitude and longitude and construct 0\--th level grid square code.
 The three variables are given as follows:
 \begin{flalign}
 x  & = \begin{cases}
